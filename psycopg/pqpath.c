@@ -1821,8 +1821,8 @@ pq_copy_both(replicationCursorObject *repl, PyObject *consume, double keepalive_
             /* how long can we wait before we need to send a keepalive? */
             gettimeofday(&curr_time, NULL);
 
-            timeradd(&repl->last_io, &keep_intr, &ping_time);
-            timersub(&ping_time, &curr_time, &timeout);
+            /* timeradd(&repl->last_io, &keep_intr, &ping_time); */
+            /* timersub(&ping_time, &curr_time, &timeout); */
 
             if (timeout.tv_sec >= 0) {
                 Py_BEGIN_ALLOW_THREADS;

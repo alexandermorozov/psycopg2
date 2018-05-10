@@ -479,8 +479,8 @@ conn_get_python_codec(const char *encoding,
     if (!(encname = psycopg_ensure_bytes(encname))) { goto exit; }
 
     /* Look up the codec functions */
-    if (!(enc_tmp = PyCodec_Encoder(Bytes_AS_STRING(encname)))) { goto exit; }
-    if (!(dec_tmp = PyCodec_Decoder(Bytes_AS_STRING(encname)))) { goto exit; }
+    /* if (!(enc_tmp = PyCodec_Encoder(Bytes_AS_STRING(encname)))) { goto exit; } */
+    /* if (!(dec_tmp = PyCodec_Decoder(Bytes_AS_STRING(encname)))) { goto exit; } */
 
     /* success */
     *pyenc = enc_tmp; enc_tmp = NULL;
